@@ -2,7 +2,16 @@
 
 @section('content')
     @if (Auth::check())
-        {{ Auth::user()->name }}
+        <div class="row">
+            <div class="col-sm-8">
+                {{-- 投稿作成ページへのリンク --}}
+                {!! link_to_route('somerecords.create', '投稿', [], ['class' => 'btn btn-primary']) !!}
+                </div>
+            <div class="col-sm-8">
+                {{-- 投稿一覧 --}}
+                @include('somerecords.somerecords')
+            </div>
+        </div>
     @else
         <div class="center jumbotron">
             <div class="text-center">
