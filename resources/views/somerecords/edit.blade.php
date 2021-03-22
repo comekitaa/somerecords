@@ -13,10 +13,10 @@
                     {!! Form::label('memo', 'メモ:') !!}
                     {!! Form::text('memo', null, ['class' => 'form-control']) !!}
                     {!! Form::label('ymd', '日付:') !!}
-                    {!! Form::text('ymd', null, ['class' => 'form-control']) !!}
+                    {!! Form::date('ymd', null, ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('更新', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('更新', ['class' => 'btn btn-info']) !!}
 
             {!! Form::close() !!}
         </div>

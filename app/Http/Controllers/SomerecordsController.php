@@ -36,13 +36,13 @@ class SomerecordsController extends Controller
     }
     public function store(Request $request)
     {
-        // バリデーション
+        // バリデーションijoumiman絵文字許容するか
         $request->validate([
-            'title' => 'required|max:100',
-            'memo' => 'max:400',
-            'ymd' => 'required|max:50'
+            'title' => 'required|max:255',
+            'memo' => 'max:255',
+            'ymd' => 'required|date|max:50'
         ]);
-
+        //$today = date("Ymd");
         // 認証済みユーザ（閲覧者）の投稿として作成（リクエストされた値をもとに作成）
         $request->user()->somerecords()->create([
             'title' => $request->title,
@@ -64,9 +64,9 @@ class SomerecordsController extends Controller
     {
         // バリデーション
         $request->validate([
-            'title' => 'required|max:100',
-            'memo' => 'max:400',
-            'ymd' => 'required|max:50'
+            'title' => 'required|max:255',
+            'memo' => 'max:255',
+            'ymd' => 'required|date|max:50'
         ]);
         $somerecord = Somerecord::findOrFail($id);
         //更新

@@ -1,5 +1,5 @@
 <header class="mb-4">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-light mb-2" style="background-color:#74b1c2;">
         {{-- トップページへのリンク --}}
         <a class="navbar-brand" href="/">Somerecords</a>
 
